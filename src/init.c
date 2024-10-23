@@ -148,7 +148,7 @@ static void set_fd_limit(void)
       exit( 1 ) ;
    }
 
-   if ( rl.rlim_max == RLIM_INFINITY ) 
+   if ( rl.rlim_max > MAX_FDS )
       rl.rlim_max = MAX_FDS;
 
    ps.ros.max_descriptors = rl.rlim_max ;
